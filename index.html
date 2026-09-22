@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#120b10" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'"
+    />
+    <meta name="description" content="Un recuerdo de nuestros primeros latidos juntos." />
+    <title>Nuestro pequeño corazón</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="memory" aria-labelledby="page-title">
+      <section class="intro" aria-label="Recuerdo de los primeros latidos">
+        <div class="eyebrow">
+          <span class="heart-mark" aria-hidden="true">♥</span>
+          <span>21 · 09 · 2026</span>
+        </div>
+        <h1 id="page-title">Nuestro pequeño corazón</h1>
+        <p class="stage">8.ª semana de gestación</p>
+        <p class="phrase">El sonido que cambió nuestro mundo.</p>
+      </section>
+
+      <section class="ultrasound-card" aria-label="Ecografía">
+        <div class="image-frame">
+          <img
+            src="assets/ecografia-anonimizada.png"
+            alt="Ecografía de la octava semana de gestación, anonimizada para proteger la privacidad"
+            width="2048"
+            height="1537"
+          />
+          <span class="privacy-label">Ecografía anonimizada</span>
+        </div>
+      </section>
+
+      <section class="heartbeat" aria-labelledby="heartbeat-title">
+        <div class="pulse-badge" aria-label="Frecuencia cardiaca: 168 latidos por minuto">
+          <span class="pulse-icon" aria-hidden="true">♥</span>
+          <span class="pulse-number">168</span>
+          <span class="pulse-unit">BPM</span>
+        </div>
+
+        <div class="player">
+          <div class="player-copy">
+            <p class="player-kicker">Audio real</p>
+            <h2 id="heartbeat-title">Sus primeros latidos</h2>
+          </div>
+
+          <div class="wave-shell">
+            <canvas id="waveform" role="img" aria-label="Onda del audio real de los latidos"></canvas>
+            <div class="time-row" aria-hidden="true">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:07</span>
+            </div>
+          </div>
+
+          <audio id="audio" preload="metadata">
+            <source src="assets/latidos.mp4" type="audio/mp4" />
+            Tu navegador no puede reproducir este audio.
+          </audio>
+
+          <div class="controls" aria-label="Controles de audio">
+            <button id="play" class="primary-control" type="button" aria-label="Escuchar latidos">
+              <span class="control-icon" aria-hidden="true">▶</span>
+              <span id="play-label">Escuchar latidos</span>
+            </button>
+            <button id="pause" class="secondary-control" type="button" aria-label="Pausar latidos" disabled>
+              <span aria-hidden="true">Ⅱ</span>
+              <span>Pausar</span>
+            </button>
+            <button id="replay" class="secondary-control" type="button" aria-label="Escuchar nuevamente">
+              <span aria-hidden="true">↻</span>
+              <span>Escuchar nuevamente</span>
+            </button>
+          </div>
+          <p id="status" class="sr-only" aria-live="polite">Audio listo para reproducir.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>Guardado para siempre, latido a latido.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
