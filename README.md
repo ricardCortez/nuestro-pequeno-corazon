@@ -5,6 +5,7 @@ Página conmemorativa estática de los primeros latidos, publicada con GitHub Pa
 ## Contenido
 
 - Ecografía anonimizada (el original no forma parte del repositorio).
+- Segunda ecografía de la semana 8, recortada y mejorada de forma conservadora para preservar el contenido médico original.
 - Audio real de 7,06 segundos almacenado dentro del sitio.
 - Onda real generada con Web Audio API y dibujada con Canvas.
 - Controles accesibles para reproducir, pausar y escuchar nuevamente.

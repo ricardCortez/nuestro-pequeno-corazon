@@ -56,7 +56,8 @@ body::before {
   grid-template-columns: minmax(18rem, 0.82fr) minmax(30rem, 1.28fr);
   grid-template-areas:
     "intro image"
-    "audio image";
+    "audio image"
+    "update update";
   gap: 1.35rem 2.4rem;
   align-items: center;
   width: min(100% - 3rem, 1180px);
@@ -339,6 +340,63 @@ button:disabled {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.week-eight {
+  grid-area: update;
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(17rem, 0.72fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: clamp(0.65rem, 1.6vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  background: linear-gradient(135deg, rgba(39, 24, 35, 0.78), rgba(16, 11, 15, 0.92));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+}
+
+.week-eight-image {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.35rem;
+  background: #050505;
+}
+
+.week-eight-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.week-eight-copy {
+  padding: 1rem clamp(0.65rem, 2.2vw, 1.6rem) 1rem 0;
+}
+
+.week-eight-date {
+  margin-bottom: 0.9rem;
+  color: var(--rose-bright);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.week-eight h2 {
+  margin-bottom: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.week-eight-copy > p:last-child {
+  max-width: 29rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .control-icon {
   font-size: 0.85rem;
 }
@@ -447,6 +505,30 @@ footer {
   #waveform {
     height: 92px;
   }
+
+  .week-eight {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2.4rem;
+    padding: 0.45rem;
+    border-radius: 1.45rem;
+  }
+
+  .week-eight-image {
+    width: 100%;
+    border-radius: 1.08rem;
+  }
+
+  .week-eight-copy {
+    width: 100%;
+    padding: 1.5rem 1.1rem 1.35rem;
+    text-align: left;
+  }
+
+  .week-eight h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
 }
 
 @media (max-width: 430px) {
@@ -501,6 +583,19 @@ footer {
 
   .secondary-control {
     font-size: 0.9rem;
+  }
+
+  .week-eight {
+    margin-top: 2rem;
+  }
+
+  .week-eight-copy {
+    padding: 1.35rem 0.95rem 1.15rem;
+  }
+
+  .week-eight-copy > p:last-child {
+    font-size: 1rem;
+    line-height: 1.62;
   }
 }
 
