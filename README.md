@@ -1,6 +1,6 @@
 # Nuestro pequeño corazón
 
-Página conmemorativa estática de los primeros latidos, publicada con GitHub Pages.
+Álbum conmemorativo estático de los primeros recuerdos, publicado con GitHub Pages y preparado para crecer con nuevas fotos, sonidos y momentos.
 
 ## Contenido
 
@@ -10,6 +10,10 @@ Página conmemorativa estática de los primeros latidos, publicada con GitHub Pa
 - Onda real generada con Web Audio API y dibujada con Canvas.
 - Controles accesibles para reproducir, pausar y escuchar nuevamente.
 - Códigos QR en PNG y SVG que apuntan a la URL pública definitiva.
+
+## Estructura del álbum
+
+Cada recuerdo vive dentro de la línea de tiempo con su fecha, etapa, imagen, texto y, cuando corresponde, audio. Para ampliar el álbum se añade una nueva entrada `memory-entry` siguiendo el mismo patrón, sin modificar los recuerdos anteriores.
 
 ## Privacidad
 

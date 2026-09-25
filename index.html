@@ -5,103 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#120b10" />
     <meta name="referrer" content="no-referrer" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'"
-    />
-    <meta name="description" content="Un recuerdo de nuestros primeros latidos juntos." />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'" />
+    <meta name="description" content="Un álbum de recuerdos que crece junto a nuestro pequeño corazón." />
     <title>Nuestro pequeño corazón</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="memory" aria-labelledby="page-title">
-      <section class="intro" aria-label="Recuerdo de los primeros latidos">
-        <div class="eyebrow">
-          <span class="heart-mark" aria-hidden="true">♥</span>
-          <span>21 · 09 · 2026</span>
-        </div>
-        <h1 id="page-title">Nuestro pequeño corazón</h1>
-        <p class="stage">8.ª semana de gestación</p>
-        <p class="phrase">El sonido que cambió nuestro mundo.</p>
-      </section>
+    <header class="album-hero">
+      <nav class="album-nav" aria-label="Navegación del álbum">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="brand-heart" aria-hidden="true">♥</span><span>Nuestro álbum</span></a>
+        <a class="nav-link" href="#recuerdos">Ver recuerdos <span aria-hidden="true">↓</span></a>
+      </nav>
 
-      <section class="ultrasound-card" aria-label="Ecografía">
-        <div class="image-frame">
-          <img
-            src="assets/ecografia-anonimizada.png"
-            alt="Ecografía de la octava semana de gestación"
-            width="2048"
-            height="1537"
-          />
-        </div>
-      </section>
+      <div id="inicio" class="hero-copy">
+        <p class="eyebrow">Una historia que apenas comienza</p>
+        <h1>Nuestro pequeño<br /><em>corazón</em></h1>
+        <p class="hero-phrase">El sonido que cambió nuestro mundo.</p>
+      </div>
 
-      <section class="heartbeat" aria-labelledby="heartbeat-title">
-        <div class="pulse-badge" aria-label="Frecuencia cardiaca: 168 latidos por minuto">
-          <span class="pulse-icon" aria-hidden="true">♥</span>
-          <span class="pulse-number">168</span>
-          <span class="pulse-unit">BPM</span>
-        </div>
+      <div class="album-summary" aria-label="Resumen del álbum">
+        <div><strong>02</strong><span>recuerdos</span></div>
+        <div><strong>8.ª</strong><span>semana</span></div>
+        <div><strong>168</strong><span>BPM</span></div>
+      </div>
+    </header>
 
-        <div class="player">
-          <div class="player-copy">
-            <p class="player-kicker">Audio real</p>
-            <h2 id="heartbeat-title">Sus primeros latidos</h2>
+    <main id="recuerdos" class="album" aria-label="Álbum de recuerdos">
+      <div class="section-heading">
+        <p class="eyebrow">Nuestra línea de tiempo</p>
+        <h2>Cada instante,<br />guardado para siempre.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="memory-entry" aria-labelledby="first-memory-title">
+          <div class="timeline-marker" aria-hidden="true"><span>01</span></div>
+          <div class="entry-meta">
+            <time datetime="2026-09-21">21 · 09 · 2026</time>
+            <span>8.ª semana de gestación</span>
           </div>
 
-          <div class="wave-shell">
-            <canvas id="waveform" role="img" aria-label="Onda del audio real de los latidos"></canvas>
-            <div class="time-row" aria-hidden="true">
-              <span id="current-time">0:00</span>
-              <span id="duration">0:07</span>
+          <div class="entry-card">
+            <div class="photo-frame">
+              <img src="assets/ecografia-anonimizada.png" alt="Ecografía de la octava semana de gestación" width="2048" height="1537" />
+              <span class="photo-caption">Nuestro primer encuentro</span>
+            </div>
+
+            <div class="entry-story">
+              <p class="entry-kicker">El primer latido</p>
+              <h3 id="first-memory-title">La primera vez que te escuchamos</h3>
+              <p class="entry-text">Un instante pequeño y eterno. Por primera vez escuchamos el ritmo que ya estaba cambiando nuestras vidas.</p>
+
+              <section class="heartbeat" aria-labelledby="heartbeat-title">
+                <div class="player-heading">
+                  <div><p class="player-kicker">Sonido original</p><h4 id="heartbeat-title">Sus primeros latidos</h4></div>
+                  <div class="pulse-badge" aria-label="Frecuencia cardiaca: 168 latidos por minuto">
+                    <span class="pulse-icon" aria-hidden="true">♥</span><span class="pulse-number">168</span><span class="pulse-unit">BPM</span>
+                  </div>
+                </div>
+                <div class="wave-shell">
+                  <canvas id="waveform" role="img" aria-label="Onda del audio real de los latidos"></canvas>
+                  <div class="time-row" aria-hidden="true"><span id="current-time">0:00</span><span id="duration">0:07</span></div>
+                </div>
+                <audio id="audio" preload="metadata"><source src="assets/latidos.mp4" type="audio/mp4" />Tu navegador no puede reproducir este audio.</audio>
+                <div class="controls" aria-label="Controles de audio">
+                  <button id="play" class="primary-control" type="button" aria-label="Escuchar latidos"><span class="control-icon" aria-hidden="true">▶</span><span id="play-label">Escuchar latidos</span></button>
+                  <button id="pause" class="secondary-control" type="button" aria-label="Pausar latidos" disabled><span aria-hidden="true">Ⅱ</span><span>Pausar</span></button>
+                  <button id="replay" class="secondary-control" type="button" aria-label="Escuchar nuevamente"><span aria-hidden="true">↻</span><span>Repetir</span></button>
+                </div>
+                <p id="status" class="sr-only" aria-live="polite">Audio listo para reproducir.</p>
+              </section>
             </div>
           </div>
+        </article>
 
-          <audio id="audio" preload="metadata">
-            <source src="assets/latidos.mp4" type="audio/mp4" />
-            Tu navegador no puede reproducir este audio.
-          </audio>
-
-          <div class="controls" aria-label="Controles de audio">
-            <button id="play" class="primary-control" type="button" aria-label="Escuchar latidos">
-              <span class="control-icon" aria-hidden="true">▶</span>
-              <span id="play-label">Escuchar latidos</span>
-            </button>
-            <button id="pause" class="secondary-control" type="button" aria-label="Pausar latidos" disabled>
-              <span aria-hidden="true">Ⅱ</span>
-              <span>Pausar</span>
-            </button>
-            <button id="replay" class="secondary-control" type="button" aria-label="Escuchar nuevamente">
-              <span aria-hidden="true">↻</span>
-              <span>Repetir</span>
-            </button>
+        <article class="memory-entry" aria-labelledby="second-memory-title">
+          <div class="timeline-marker" aria-hidden="true"><span>02</span></div>
+          <div class="entry-meta"><time datetime="2026-09-25">25 · 09 · 2026</time><span>Semana 8</span></div>
+          <div class="entry-card entry-card--reverse">
+            <div class="photo-frame">
+              <img src="assets/ecografia-semana-8.png" alt="Segunda ecografía de la semana 8, recortada para destacar el embrión y conservar la medición original visible" width="1104" height="730" loading="lazy" />
+              <span class="photo-caption">Cada día un poco más cerca</span>
+            </div>
+            <div class="entry-story">
+              <p class="entry-kicker">Un nuevo vistazo</p>
+              <h3 id="second-memory-title">Ya podemos verte</h3>
+              <p class="entry-text">Aquí ya se distingue el embrión. En esta etapa, el cerebro continúa desarrollándose y las manos y los pies comienzan a formarse.</p>
+              <div class="memory-note" aria-label="Nota del recuerdo"><span aria-hidden="true">♥</span><p>La imagen que convirtió la espera en algo un poco más real.</p></div>
+            </div>
           </div>
-          <p id="status" class="sr-only" aria-live="polite">Audio listo para reproducir.</p>
-        </div>
-      </section>
+        </article>
 
-      <section class="week-eight" aria-labelledby="week-eight-title">
-        <div class="week-eight-image">
-          <img
-            src="assets/ecografia-semana-8.png"
-            alt="Segunda ecografía de la semana 8, recortada para destacar el embrión y conservar la medición original visible"
-            width="1104"
-            height="730"
-            loading="lazy"
-          />
-        </div>
-        <div class="week-eight-copy">
-          <p class="week-eight-date">25 · 09 · 2026</p>
-          <h2 id="week-eight-title">Semana 8</h2>
-          <p>
-            Aquí ya se distingue el embrión. En esta etapa, el cerebro continúa desarrollándose y las manos y los pies comienzan a formarse.
-          </p>
-        </div>
-      </section>
+        <section class="album-continuation" aria-label="Continuación del álbum">
+          <span class="continuation-heart" aria-hidden="true">♥</span>
+          <p class="eyebrow">Continuará</p>
+          <h2>Este álbum crecerá contigo.</h2>
+          <p>Aquí iremos guardando nuevas ecografías, fotografías, sonidos y momentos de nuestra historia.</p>
+        </section>
+      </div>
     </main>
 
-    <footer>Guardado para siempre, latido a latido.</footer>
+    <footer><span aria-hidden="true">♥</span>Guardado para siempre, latido a latido.</footer>
     <script src="script.js"></script>
   </body>
 </html>
